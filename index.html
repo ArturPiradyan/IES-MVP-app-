@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Copernicus Berlin · International Excellence Scholarship (IES)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #1f2e5b;
+    --navy-deep: #141f3d;
+    --navy-soft: #2c3f78;
+    --orange: #ff7c07;
+    --orange-deep: #e56c00;
+    --orange-soft: #ffb066;
+    --paper: #ffffff;
+    --paper-dim: #f2f3f7;
+    --ink: #161b26;
+    --slate: #57606f;
+    --green: #3f7a5c;
+    --coral: #c94f36;
+    --line-on-paper: rgba(31,46,91,0.14);
+    --line-on-navy: rgba(255,255,255,0.18);
+    --radius-sm: 4px;
+    --radius-pill: 999px;
+    --shadow-float: 0 18px 40px -14px rgba(20,31,61,0.45);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  button{font-family:inherit; cursor:pointer;}
+  :focus-visible{outline:2px solid var(--orange); outline-offset:2px;}
+
+  .wrap{max-width:1160px; margin:0 auto; padding:0 28px;}
+  @media (max-width:640px){.wrap{padding:0 20px;}}
+
+  header.site{
+    position:sticky; top:0; z-index:40;
+    background:var(--navy-deep);
+    border-bottom:1px solid var(--line-on-navy);
+    box-shadow:0 2px 18px rgba(20,31,61,0.18);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0;}
+  .brand{
+    display:flex; align-items:center; text-decoration:none;
+    background:transparent; border:none; padding:0; margin:0; outline:none; box-shadow:none;
+  }
+  .brand img{
+    height:44px; width:auto; display:block; border:none; outline:none; box-shadow:none;
+    mix-blend-mode:screen; filter:brightness(1.08) contrast(1.05);
+  }
+  .navlinks{display:flex; align-items:center; gap:28px;}
+  .navlinks a{color:#ffffff; text-decoration:none; font-size:14.5px; font-weight:500; transition:color .2s; opacity:0.92;}
+  .navlinks a:hover{color:var(--orange-soft); opacity:1;}
+  .cta-pill{
+    background:var(--orange); color:#ffffff; font-weight:700; font-size:14px;
+    padding:9px 18px; border-radius:var(--radius-pill); border:none; text-decoration:none;
+    display:inline-flex; align-items:center; gap:6px; transition:transform .18s ease, background .18s ease;
+  }
+  .cta-pill:hover{background:var(--orange-deep); transform:translateY(-1px);}
+  .navburger{display:none; background:none; border:1px solid var(--line-on-navy); color:#fff; padding:8px 10px; border-radius:var(--radius-sm);}
+  @media (max-width:820px){
+    .navlinks{display:none;}
+    .navburger{display:inline-flex;}
+  }
+  .mobilemenu{
+    background:var(--navy-deep); border-top:1px solid var(--line-on-navy);
+    display:flex; flex-direction:column; padding:14px 28px 20px;
+  }
+  .mobilemenu a{color:#ffffff; text-decoration:none; padding:10px 0; border-bottom:1px solid var(--line-on-navy); font-size:15px;}
+  .mobilemenu a:last-child{border-bottom:none;}
+
+  .hero{
+    background:radial-gradient(120% 140% at 78% -10%, var(--navy-soft) 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    color:#ffffff; padding:64px 0 60px; overflow:hidden; position:relative;
+  }
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:center;}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr; gap:40px;}}
+  .hero h1{font-size:clamp(34px,5vw,54px); line-height:1.06; color:#ffffff; max-width:540px;}
+  .hero .sub{margin-top:20px; font-size:17px; line-height:1.6; color:rgba(255,255,255,0.85); max-width:480px;}
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px;}
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.35); color:#ffffff; background:transparent;
+    padding:11px 20px; border-radius:var(--radius-pill); font-size:14.5px; text-decoration:none;
+    transition:border-color .2s, background .2s;
+  }
+  .btn-ghost:hover{border-color:var(--orange-soft); background:rgba(255,176,102,0.1);}
+  .hero-stats{display:flex; gap:28px; margin-top:38px; flex-wrap:wrap;}
+  .hero-stats div b{display:block; font-family:'Fraunces',serif; font-size:22px; color:var(--orange-soft);}
+  .hero-stats div span{font-size:12.5px; color:rgba(255,255,255,0.75); letter-spacing:0.02em;}
+
+  .orbit-wrap{position:relative; display:flex; align-items:center; justify-content:center; min-height:360px;}
+  .orbit-ring{position:absolute; border-radius:50%; border:1px solid rgba(255,255,255,0.22);}
+  .orbit-ring.r1{width:320px; height:320px;}
+  .orbit-ring.r2{width:230px; height:230px;}
+  .orbit-spin{position:absolute; inset:0; animation:spin 34s linear infinite;}
+  .orbit-spin.slow{animation-duration:52s; animation-direction:reverse;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .orbit-dot{
+    position:absolute; width:10px; height:10px; border-radius:50%; background:var(--orange);
+    box-shadow:0 0 0 5px rgba(255,124,7,0.18);
+  }
+  .orbit-dot.alt{background:#ffffff; box-shadow:0 0 0 5px rgba(255,255,255,0.12);}
+  .orbit-center{
+    position:relative; z-index:2; width:126px; height:126px; border-radius:50%;
+    background:var(--navy-deep); border:2px solid var(--orange);
+    display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center;
+  }
+  .orbit-center b{font-family:'Fraunces',serif; font-size:15px; color:#ffffff;}
+  .orbit-center span{font-size:10px; color:var(--orange-soft); margin-top:2px;}
+  .orbit-legend{margin-top:14px; font-size:12px; color:rgba(255,255,255,0.7); text-align:right; max-width:300px; margin-left:auto;}
+  .orbit-city{
+    position:absolute; z-index:3; display:flex; align-items:center; gap:6px;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:#ffffff; white-space:nowrap;
+    background:rgba(20,31,61,0.55); border:1px solid var(--line-on-navy); padding:3px 9px 3px 7px;
+    border-radius:var(--radius-pill); backdrop-filter:blur(2px);
+  }
+  .orbit-city::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--orange-soft); flex-shrink:0;}
+  .orbit-city.c1{top:-6px; left:50%; transform:translateX(-50%);}
+  .orbit-city.c2{top:78px; right:-18px;}
+  .orbit-city.c3{bottom:34px; right:-6px;}
+  .orbit-city.c4{bottom:-6px; left:38%; transform:translateX(-50%);}
+  .orbit-city.c5{top:78px; left:-18px;}
+  @media (max-width:900px){
+    .orbit-city{font-size:10px; padding:2px 7px 2px 6px;}
+    .orbit-city.c2, .orbit-city.c5{top:64px;}
+  }
+
+  section{padding:84px 0;}
+  @media (max-width:640px){section{padding:56px 0;}}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head h2{font-size:clamp(26px,3.4vw,36px); color:var(--navy);}
+  .section-head p{margin-top:14px; font-size:16px; line-height:1.65; color:var(--slate);}
+  .dark-section{background:var(--navy); color:#ffffff;}
+  .dark-section .section-head h2{color:#ffffff;}
+  .dark-section .section-head p{color:rgba(255,255,255,0.85);}
+  .tint-section{background:var(--paper-dim);}
+
+  .program-intro{font-size:16.5px; line-height:1.7; color:var(--ink); max-width:760px; margin-bottom:12px;}
+  .program-accordion{border-top:1px solid var(--line-on-paper); margin-top:32px;}
+  .prog-item{border-bottom:1px solid var(--line-on-paper);}
+  .prog-q{
+    width:100%; display:flex; align-items:center; justify-content:space-between; gap:20px;
+    background:none; border:none; padding:22px 2px; text-align:left;
+  }
+  .prog-q b{font-size:17.5px; color:var(--navy); font-family:'Fraunces',serif; font-weight:600;}
+  .prog-toggle{
+    flex-shrink:0; width:34px; height:34px; border-radius:6px; background:var(--orange); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:600;
+    transition:transform .25s ease, background .2s ease;
+  }
+  .prog-item.open .prog-toggle{transform:rotate(45deg); background:var(--navy);}
+  .prog-a{max-height:0; overflow:hidden; transition:max-height .32s ease;}
+  .prog-a p{padding:0 2px 24px; font-size:15px; line-height:1.7; color:var(--slate); max-width:700px;}
+
+  .uni-row{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line-on-paper); border-left:1px solid var(--line-on-paper); margin-top:40px;}
+  @media (max-width:760px){.uni-row{grid-template-columns:repeat(2,1fr);}}
+  .uni-cell{border-right:1px solid var(--line-on-paper); border-bottom:1px solid var(--line-on-paper); padding:22px 20px; background:#fff;}
+  .uni-cell b{display:block; font-family:'Fraunces',serif; font-size:17px; margin-bottom:6px; color:var(--navy);}
+  .uni-cell span{font-size:13px; color:var(--slate);}
+
+  .stay-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:0; border-radius:8px; overflow:hidden; box-shadow:var(--shadow-float);}
+  @media (max-width:820px){.stay-grid{grid-template-columns:1fr;}}
+  .stay-photo{position:relative; min-height:340px; background-size:cover; background-position:center;}
+  .stay-photo::after{content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(20,31,61,0.55) 0%, rgba(20,31,61,0.05) 45%);}
+  .stay-photo .cap{position:absolute; left:22px; bottom:18px; color:#fff; font-size:13px; z-index:2; max-width:80%;}
+  .stay-photo .cap b{display:block; font-family:'Fraunces',serif; font-size:17px; margin-bottom:4px;}
+  .stay-info{background:var(--navy-deep); color:#fff; padding:34px 30px; display:flex; flex-direction:column; justify-content:center; gap:18px;}
+  .stay-info h3{color:#fff; font-size:22px;}
+  .stay-info ul{margin:0; padding-left:18px;}
+  .stay-info li{font-size:14px; color:rgba(255,255,255,0.82); line-height:1.7; margin-bottom:4px;}
+
+  .tool-panel{
+    background:#fff; border:1px solid var(--line-on-paper); border-radius:6px;
+    padding:36px; box-shadow:var(--shadow-float);
+  }
+  @media (max-width:640px){.tool-panel{padding:24px;}}
+  .countdown-row{display:flex; gap:14px; flex-wrap:wrap; margin:26px 0 30px;}
+  .count-box{
+    background:var(--navy); color:#fff; border-radius:5px; padding:16px 20px; min-width:84px; text-align:center;
+    flex:1;
+  }
+  .count-box b{display:block; font-family:'Fraunces',serif; font-size:30px; color:var(--orange-soft); transition:transform .25s ease;}
+  .count-box span{font-size:11px; letter-spacing:0.04em; color:rgba(255,255,255,0.75);}
+  .count-box.pulse b{transform:scale(1.12);}
+  .reminder-grid{display:flex; gap:10px; flex-wrap:wrap; margin:16px 0 20px;}
+  .chip-toggle{
+    border:1px solid var(--line-on-paper); background:var(--paper); padding:8px 14px; border-radius:var(--radius-pill);
+    font-size:13.5px; color:var(--slate); transition:all .18s ease;
+  }
+  .chip-toggle.on{background:var(--navy); color:#fff; border-color:var(--navy);}
+  .field-row{display:flex; gap:12px; flex-wrap:wrap;}
+  input[type="email"]{
+    flex:1; min-width:220px; padding:12px 14px; border:1px solid var(--line-on-paper); border-radius:5px;
+    font-size:14.5px; font-family:inherit; background:var(--paper);
+  }
+  input[type="email"]:focus{border-color:var(--orange);}
+  .btn-solid{
+    background:var(--navy); color:#fff; border:none; padding:12px 22px; border-radius:5px;
+    font-size:14.5px; font-weight:600; transition:background .18s ease;
+  }
+  .btn-solid:hover{background:var(--navy-soft);}
+  .schedule-result{
+    margin-top:20px; background:var(--paper-dim); border-left:3px solid var(--green); border-radius:4px; padding:16px 18px;
+    font-size:14px; color:var(--ink); animation:fadeSlide .3s ease;
+  }
+  .schedule-result ul{margin:8px 0 0; padding-left:18px;}
+  .schedule-result li{margin-bottom:3px; color:var(--slate);}
+  @keyframes fadeSlide{from{opacity:0; transform:translateY(-6px);} to{opacity:1; transform:translateY(0);}}
+
+  .quiz-progress{display:flex; gap:6px; margin-bottom:28px;}
+  .quiz-progress span{height:4px; flex:1; background:var(--line-on-paper); border-radius:2px; overflow:hidden;}
+  .quiz-progress span i{display:block; height:100%; background:var(--orange); width:0%; transition:width .4s ease;}
+  .quiz-step{animation:fadeSlide .28s ease;}
+  .quiz-step h3{font-size:20px; margin-bottom:4px; color:var(--navy);}
+  .quiz-step p.hint{color:var(--slate); font-size:13.5px; margin-bottom:18px;}
+  .opt-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  @media (max-width:560px){.opt-grid{grid-template-columns:1fr;}}
+  .opt-btn{
+    text-align:left; border:1px solid var(--line-on-paper); background:#fff; border-radius:5px;
+    padding:14px 16px; font-size:14.5px; color:var(--ink); transition:all .16s ease;
+  }
+  .opt-btn:hover{border-color:var(--orange);}
+  .opt-btn.selected{border-color:var(--navy); background:var(--navy); color:#fff;}
+  select.opt-select{
+    width:100%; padding:13px 14px; border:1px solid var(--line-on-paper); border-radius:5px;
+    font-size:14.5px; font-family:inherit; background:#fff;
+  }
+  .quiz-nav{display:flex; justify-content:space-between; margin-top:26px;}
+  .btn-link{background:none; border:none; color:var(--slate); font-size:14px; padding:8px 4px;}
+  .btn-link:hover{color:var(--ink);}
+  .result-card{text-align:left; animation:fadeSlide .3s ease;}
+  .result-badge{
+    display:inline-block; padding:6px 14px; border-radius:var(--radius-pill); font-size:12.5px; font-weight:600;
+    letter-spacing:0.01em; margin-bottom:16px;
+  }
+  .result-badge.eligible{background:rgba(63,122,92,0.15); color:var(--green);}
+  .result-badge.borderline{background:rgba(255,124,7,0.16); color:#a2530a;}
+  .result-badge.ineligible{background:rgba(201,79,54,0.15); color:var(--coral);}
+  .result-card ul{margin:14px 0 0; padding-left:18px;}
+  .result-card li{margin-bottom:6px; font-size:14.5px; color:var(--slate); line-height:1.5;}
+  .result-card h3{color:var(--navy);}
+
+  .faq-controls{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:26px; align-items:center;}
+  input.faq-search{
+    flex:1; min-width:200px; padding:12px 16px; border:1px solid var(--line-on-paper); border-radius:var(--radius-pill);
+    font-size:14.5px; background:#fff; font-family:inherit;
+  }
+  .faq-item{border-bottom:1px solid var(--line-on-paper);}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; padding:18px 2px; display:flex; justify-content:space-between;
+    align-items:center; gap:16px; font-size:15.5px; font-weight:500; color:var(--ink);
+  }
+  .faq-q .cat{font-size:11px; font-family:'IBM Plex Mono',monospace; color:var(--orange-deep); display:block; margin-bottom:4px; font-weight:600;}
+  .faq-toggle{
+    flex-shrink:0; width:28px; height:28px; border-radius:5px; background:var(--paper-dim); color:var(--navy);
+    display:flex; align-items:center; justify-content:center; font-size:16px; transition:transform .25s ease, background .2s ease;
+  }
+  .faq-item.open .faq-toggle{transform:rotate(45deg); background:var(--orange); color:#fff;}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .faq-a p{padding:0 2px 20px; font-size:14.5px; color:var(--slate); line-height:1.65; max-width:660px;}
+  .faq-empty{padding:30px 4px; color:var(--slate); font-size:14.5px;}
+
+  .timeline-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:14px;
+    margin-top:36px;
+    width:100%;
+  }
+  @media (max-width:992px){
+    .timeline-grid{
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+  }
+  @media (max-width:580px){
+    .timeline-grid{
+      grid-template-columns:repeat(1, 1fr);
+      gap:12px;
+    }
+  }
+  .timeline-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid var(--line-on-navy);
+    border-radius:8px;
+    padding:20px 16px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    transition:transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+  }
+  .timeline-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--orange-soft);
+    background:rgba(255,255,255,0.09);
+  }
+  .timeline-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    font-weight:600;
+    color:var(--orange-soft);
+    background:rgba(255,124,7,0.16);
+    border:1px solid rgba(255,176,102,0.3);
+    padding:3px 9px;
+    border-radius:var(--radius-pill);
+    margin-bottom:12px;
+    width:fit-content;
+  }
+  .timeline-card b{
+    display:block;
+    font-size:14.5px;
+    line-height:1.35;
+    margin-bottom:8px;
+    color:#ffffff;
+    font-family:'IBM Plex Sans', sans-serif;
+  }
+  .timeline-card span{
+    font-size:12.5px;
+    color:rgba(255,255,255,0.78);
+    line-height:1.45;
+  }
+
+  .stack-note{
+    margin-top:36px; border:1px solid var(--line-on-navy); border-radius:8px; padding:20px 22px; background:rgba(255,255,255,0.04);
+    font-size:14px; color:rgba(255,255,255,0.85); line-height:1.65;
+  }
+
+  .chat-fab{
+    position:fixed; bottom:24px; right:24px; z-index:50; background:var(--navy); color:#fff;
+    border:1px solid var(--line-on-navy); border-radius:var(--radius-pill); padding:14px 20px 14px 16px;
+    display:flex; align-items:center; gap:9px; box-shadow:var(--shadow-float); font-size:14px; font-weight:600;
+    transition:transform .2s ease;
+  }
+  .chat-fab:hover{transform:translateY(-2px);}
+  .chat-dot{width:8px; height:8px; border-radius:50%; background:var(--orange); animation:pulseDot 1.8s ease-in-out infinite;}
+  @keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:0.35;}}
+  .chat-panel{
+    position:fixed; bottom:24px; right:24px; z-index:50; width:360px; max-width:calc(100vw - 32px);
+    height:min(520px, calc(100vh - 100px)); background:#fff; border-radius:10px; box-shadow:var(--shadow-float);
+    display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--line-on-paper);
+    animation:fadeSlide .22s ease;
+  }
+  .chat-head{background:var(--navy); color:#fff; padding:16px 18px; display:flex; justify-content:space-between; align-items:center;}
+  .chat-head b{font-family:'Fraunces',serif; font-size:15.5px;}
+  .chat-head span{display:block; font-size:11px; color:rgba(255,255,255,0.75); margin-top:2px;}
+  .chat-head button{background:none; border:none; color:rgba(255,255,255,0.75); font-size:18px;}
+  .chat-body{flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:10px; background:var(--paper-dim);}
+  .msg{max-width:85%; padding:10px 13px; border-radius:10px; font-size:13.5px; line-height:1.5; animation:fadeSlide .2s ease;}
+  .msg.advisor{background:#fff; border:1px solid var(--line-on-paper); align-self:flex-start; border-bottom-left-radius:2px;}
+  .msg.user{background:var(--navy); color:#fff; align-self:flex-end; border-bottom-right-radius:2px;}
+  .msg.typing{display:flex; gap:4px; align-items:center;}
+  .msg.typing i{width:5px; height:5px; border-radius:50%; background:var(--slate); display:inline-block; animation:bounce 1s infinite;}
+  .msg.typing i:nth-child(2){animation-delay:.15s;} .msg.typing i:nth-child(3){animation-delay:.3s;}
+  @keyframes bounce{0%,80%,100%{transform:translateY(0); opacity:0.5;} 40%{transform:translateY(-4px); opacity:1;}}
+  .chat-suggest{display:flex; gap:6px; flex-wrap:wrap; padding:0 16px 12px; background:var(--paper-dim);}
+  .chat-suggest button{
+    font-size:12px; border:1px solid var(--line-on-paper); background:#fff; padding:6px 10px; border-radius:var(--radius-pill); color:var(--slate);
+  }
+  .chat-suggest button:hover{border-color:var(--orange);}
+  .chat-input{display:flex; gap:8px; padding:12px; border-top:1px solid var(--line-on-paper); background:#fff;}
+  .chat-input input{flex:1; border:1px solid var(--line-on-paper); border-radius:var(--radius-pill); padding:10px 14px; font-size:13.5px; font-family:inherit;}
+  .chat-input button{background:var(--navy); color:#fff; border:none; border-radius:50%; width:38px; height:38px; flex-shrink:0;}
+
+  footer{background:var(--navy-deep); color:rgba(255,255,255,0.82); padding:52px 0 30px;}
+  .footer-top{display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; padding-bottom:36px; border-bottom:1px solid var(--line-on-navy);}
+  .footer-top h3{color:#fff; font-size:22px; max-width:340px;}
+  .footer-brand{
+    display:flex; align-items:center; gap:10px; margin-bottom:20px;
+    background:transparent; border:none; padding:0; outline:none; box-shadow:none;
+  }
+  .footer-brand img{
+    height:38px; display:block; border:none; outline:none; box-shadow:none;
+    mix-blend-mode:screen; filter:brightness(1.08) contrast(1.05);
+  }
+  footer .fine{margin-top:26px; font-size:12.5px; color:rgba(255,255,255,0.6); line-height:1.7; max-width:780px;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useMemo, useRef } = React;
+
+const LOGO_SRC = "images/logo.png";
+const ROOM_SRC = "images/room.png";
+
+const COUNTRIES = ["Albania","Armenia","Azerbaijan","Belarus","Bosnia and Herzegovina","Georgia",
+  "Kazakhstan","Kosovo","Kyrgyzstan","Moldova","Mongolia","Montenegro","North Macedonia","Serbia",
+  "Tajikistan","Turkey","Turkmenistan","Ukraine","Uzbekistan"];
+
+const UNIVERSITIES = [
+  {short:"FU Berlin", full:"Freie Universität Berlin"},
+  {short:"HU Berlin", full:"Humboldt-Universität zu Berlin"},
+  {short:"HWR Berlin", full:"Berlin School of Economics and Law"},
+  {short:"U Potsdam", full:"University of Potsdam"},
+];
+
+const PROGRAM_PILLARS = [
+  {t:"Exchange Study", d:"A place at one of four Berlin-area universities (FU Berlin, HU Berlin, HWR Berlin or the University of Potsdam), with courses chosen to fit your existing degree and academic goals."},
+  {t:"Community Engagement", d:"Scholars take part in the Copernicus Berlin association itself — social meetups, volunteering and events that build a real network rather than a passive stay."},
+  {t:"Professional Internship", d:"A minimum eight-week, full-time internship placed alongside your studies, designed to turn the semester into practical, CV-ready experience."},
+  {t:"Discovering Europe", d:"Educational trips and cultural programming that use Berlin as a base for exploring German and wider European history, politics and daily life."},
+];
+
+const FAQS = [
+  {cat:"Eligibility", q:"Who can apply to IES?", a:"Students of any subject — bachelor's, master's or PhD — who are currently enrolled at a university and hold citizenship or permanent residence in one of the partner countries. Above-average academic standing is expected."},
+  {cat:"Eligibility", q:"Which countries are currently eligible?", a:"Albania, Armenia, Azerbaijan, Belarus, Bosnia and Herzegovina, Georgia, Kazakhstan, Kosovo, Kyrgyzstan, Moldova, Mongolia, Montenegro, North Macedonia, Serbia, Tajikistan, Turkey, Turkmenistan, Ukraine and Uzbekistan."},
+  {cat:"Eligibility", q:"Do I need to already speak German?", a:"Fluent German isn't assumed on day one, but comfort in English or German makes coursework, the internship and daily life much smoother."},
+  {cat:"Program", q:"How long does the programme last?", a:"IES is flexible: scholars choose a 3, 6, 9 or 12 month stay depending on their academic and internship plans."},
+  {cat:"Program", q:"Is the internship actually mandatory?", a:"Yes. A minimum of eight weeks, full-time, is built into the programme so it produces real professional experience."},
+  {cat:"Program", q:"Which universities host scholars?", a:"Freie Universität Berlin, Humboldt-Universität zu Berlin, the Berlin School of Economics and Law (HWR Berlin), and the University of Potsdam."},
+  {cat:"Program", q:"Where do scholars live?", a:"In shared Copernicus Berlin housing in the city, usually a single or twin room with desk and wardrobe, alongside other scholars in the same cohort."},
+  {cat:"Funding", q:"What exactly does the scholarship pay for?", a:"Accommodation, enrollment and fees, liability insurance, the welcome package, seminars, mentoring, and the cultural and social programme."},
+  {cat:"Application", q:"How long does the application take to fill out?", a:"The form itself takes roughly 20 minutes, but plan ahead to gather transcripts, a CV and any language or motivation documents beforehand."},
+  {cat:"Application", q:"When is the deadline?", a:"Applications close on 31 December for the following intake. Always keep track of your schedule using our deadline countdown."},
+  {cat:"Application", q:"What happens after I submit my application?", a:"Applications are screened, shortlisted candidates are invited to an interview, and decisions follow promptly with either an offer, waitlist placement, or outcome notice."},
+  {cat:"Application", q:"I'm about to graduate — can I still apply?", a:"You generally need to be enrolled during the period you spend in Berlin. Contact admissions directly if you have specific timing questions."}
+];
+
+const FAQ_CATS = ["All", ...Array.from(new Set(FAQS.map(f=>f.cat)))];
+
+function findProgramAnswer(query) {
+  const q = query.toLowerCase();
+  
+  for (const f of FAQS) {
+    if (q.includes(f.cat.toLowerCase()) || f.q.toLowerCase().split(' ').some(w => w.length > 3 && q.includes(w))) {
+      return f.a;
+    }
+  }
+
+  if (q.includes("country") || q.includes("countries") || q.includes("eligible") || q.includes("georgia") || q.includes("armenia")) {
+    return "Eligible countries include Albania, Armenia, Azerbaijan, Belarus, Bosnia and Herzegovina, Georgia, Kazakhstan, Kosovo, Kyrgyzstan, Moldova, Mongolia, Montenegro, North Macedonia, Serbia, Tajikistan, Turkey, Turkmenistan, Ukraine, and Uzbekistan.";
+  }
+  if (q.includes("university") || q.includes("universities") || q.includes("where")) {
+    return "Host universities include Freie Universität Berlin, Humboldt-Universität zu Berlin, HWR Berlin (Berlin School of Economics and Law), and the University of Potsdam.";
+  }
+  if (q.includes("deadline") || q.includes("when") || q.includes("date")) {
+    return "Applications close on 31 December for the following intake cycle. You can set reminders using our interactive deadline tool.";
+  }
+  if (q.includes("internship")) {
+    return "Yes, a minimum 8-week full-time internship is an integral part of the IES programme alongside university coursework.";
+  }
+  if (q.includes("housing") || q.includes("live") || q.includes("room") || q.includes("accommodation")) {
+    return "Scholars reside in shared Copernicus Berlin housing in the city, with single or twin rooms, utilities, and host university fees fully covered.";
+  }
+
+  return "For full details about your application or candidate background, please refer to our FAQ section or contact the admissions team directly at info@copernicusberlin.org.";
+}
+
+function getNextDeadline(){
+  const now = new Date();
+  let year = now.getMonth() === 11 && now.getDate() > 31 ? now.getFullYear()+1 : now.getFullYear();
+  let target = new Date(year, 11, 31, 23, 59, 0);
+  if (target.getTime() < now.getTime()) target = new Date(year+1, 11, 31, 23, 59, 0);
+  return target;
+}
+
+function useCountdown(target){
+  const [left, setLeft] = useState(()=> target.getTime() - Date.now());
+  useEffect(()=>{
+    const id = setInterval(()=> setLeft(target.getTime() - Date.now()), 1000);
+    return ()=> clearInterval(id);
+  },[target]);
+  const clamped = Math.max(left,0);
+  const days = Math.floor(clamped/86400000);
+  const hours = Math.floor((clamped/3600000)%24);
+  const mins = Math.floor((clamped/60000)%60);
+  const secs = Math.floor((clamped/1000)%60);
+  return {days,hours,mins,secs};
+}
+
+function Header(){
+  const [open, setOpen] = useState(false);
+  const links = [["Program","#program"],["Where you'll live","#stay"],["Timeline","#automation"],["Deadline","#deadline"],["Eligibility","#eligibility"],["FAQ","#faq"]];
+  return (
+    <header className="site">
+      <div className="wrap">
+        <nav>
+          <a className="brand" href="#top">
+            <img src={LOGO_SRC} alt="Copernicus Berlin e.V. logo" />
+          </a>
+          <div className="navlinks">
+            {links.map(([label,href])=> <a key={href} href={href}>{label}</a>)}
+            <a className="cta-pill" href="#eligibility">Check eligibility</a>
+          </div>
+          <button className="navburger" onClick={()=>setOpen(o=>!o)} aria-label="Toggle menu">
+            {open ? "✕" : "☰"}
+          </button>
+        </nav>
+      </div>
+      {open && (
+        <div className="mobilemenu">
+          {links.map(([label,href])=> <a key={href} href={href} onClick={()=>setOpen(false)}>{label}</a>)}
+          <a href="#eligibility" onClick={()=>setOpen(false)}>Check eligibility →</a>
+        </div>
+      )}
+    </header>
+  );
+}
+
+function Hero(){
+  return (
+    <section id="top" className="hero" style={{paddingTop:"40px"}}>
+      <div className="wrap hero-grid">
+        <div>
+          <h1>A programme in Berlin,<br/>earned on merit.</h1>
+          <p className="sub">
+            IES funds a flexible 3, 6, 9 or 12 month stay combining study at a Berlin university, a
+            real internship, and community life — for ambitious students from Eastern &amp; Southeastern
+            Europe, the Caucasus and Central Asia. Explore programme tracks, test your eligibility with our self-check tool, track key deadlines, and get instant guidance on joining our scholar cohort in Berlin.
+          </p>
+          <div className="hero-ctas">
+            <a className="cta-pill" href="#eligibility">Check your eligibility</a>
+            <a className="btn-ghost" href="#deadline">See the deadline</a>
+          </div>
+          <div className="hero-stats">
+            <div><b>19</b><span>eligible countries</span></div>
+            <div><b>4</b><span>partner universities</span></div>
+            <div><b>3–12</b><span>months, your choice</span></div>
+          </div>
+        </div>
+        <div>
+          <div className="orbit-wrap">
+            <div className="orbit-ring r1">
+              <div className="orbit-spin">
+                <div className="orbit-dot" style={{top:"-5px", left:"155px"}}></div>
+                <div className="orbit-dot alt" style={{top:"155px", left:"-5px"}}></div>
+                <div className="orbit-dot" style={{bottom:"-5px", left:"90px"}}></div>
+              </div>
+            </div>
+            <div className="orbit-ring r2">
+              <div className="orbit-spin slow">
+                <div className="orbit-dot alt" style={{top:"-4px", left:"110px"}}></div>
+                <div className="orbit-dot" style={{bottom:"20px", right:"-4px"}}></div>
+              </div>
+            </div>
+            <div className="orbit-center">
+              <b>Berlin</b>
+              <span>host city</span>
+            </div>
+            <span className="orbit-city c1">Kyiv</span>
+            <span className="orbit-city c2">Yerevan</span>
+            <span className="orbit-city c3">Tashkent</span>
+            <span className="orbit-city c4">Belgrade</span>
+            <span className="orbit-city c5">Tbilisi</span>
+          </div>
+          <p className="orbit-legend">
+            Each orbiting point stands for a home region sending scholars to Berlin — from Kyiv,
+            Belgrade and Tbilisi to Yerevan and Tashkent — echoing the globe at the centre of the
+            Copernicus Berlin mark.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Program(){
+  const [openIdx, setOpenIdx] = useState(null);
+  return (
+    <section id="program">
+      <div className="wrap">
+        <div className="section-head">
+          <h2>What the International Excellence Scholarship is</h2>
+        </div>
+        <p className="program-intro">
+          IES is a flexible 3, 6, 9 or 12 month programme that combines academic study, professional
+          development, community engagement and cultural discovery in Berlin. It's built for motivated,
+          socially engaged students who want structured international experience — practical skills,
+          a real network, and a broader view of Europe.
+        </p>
+        <div className="program-accordion">
+          {PROGRAM_PILLARS.map((p,i)=>{
+            const open = openIdx===i;
+            return (
+              <div className={"prog-item"+(open?" open":"")} key={p.t}>
+                <button className="prog-q" onClick={()=>setOpenIdx(open?null:i)} aria-expanded={open}>
+                  <b>{p.t}</b>
+                  <span className="prog-toggle">+</span>
+                </button>
+                <div className="prog-a" style={{maxHeight: open ? "160px" : "0"}}>
+                  <p>{p.d}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="uni-row">
+          {UNIVERSITIES.map(u=> (
+            <div className="uni-cell" key={u.short}>
+              <b>{u.short}</b>
+              <span>{u.full}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Stay(){
+  return (
+    <section id="stay" className="tint-section">
+      <div className="wrap">
+        <div className="section-head">
+          <h2>Where scholars live</h2>
+          <p>Shared Copernicus Berlin housing in the city — scholars settle into a fully equipped room in a flat alongside other cohort members.</p>
+        </div>
+        <div className="stay-grid">
+          <div className="stay-photo" style={{backgroundImage:"url(" + ROOM_SRC + ")"}}>
+            <div className="cap">
+              <b>A scholar's room in Berlin</b>
+              <span>Desk, storage, and a shared living space — set up to study and work comfortably.</span>
+            </div>
+          </div>
+          <div className="stay-info">
+            <h3>What's included</h3>
+            <ul>
+              <li>Furnished single or twin room with desk and wardrobe</li>
+              <li>Shared living space with fellow scholars in your cohort</li>
+              <li>Enrollment and fees at your host university, covered directly</li>
+              <li>Liability insurance for the full length of your stay</li>
+              <li>Welcome package, seminars, mentoring and workshops</li>
+              <li>Cultural events, educational trips and social meetups</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DeadlineTool(){
+  const target = useMemo(()=> getNextDeadline(), []);
+  const {days,hours,mins,secs} = useCountdown(target);
+  const [pulseKey, setPulseKey] = useState(0);
+  useEffect(()=>{ setPulseKey(k=>k+1); },[secs]);
+
+  const [picked, setPicked] = useState([30,7]);
+  const [email, setEmail] = useState("");
+  const [scheduled, setScheduled] = useState(null);
+
+  const togglePick = (d)=> setPicked(p => p.includes(d) ? p.filter(x=>x!==d) : [...p,d].sort((a,b)=>b-a));
+
+  const submit = (e)=>{
+    e.preventDefault();
+    if(!email || picked.length===0) return;
+    const dates = picked.map(d=>{
+      const dt = new Date(target.getTime() - d*86400000);
+      return {d, date: dt.toLocaleDateString(undefined,{month:"short", day:"numeric", year:"numeric"})};
+    });
+    setScheduled({email, dates});
+  };
+
+  const fmt = (n)=> String(n).padStart(2,"0");
+
+  return (
+    <section id="deadline">
+      <div className="wrap">
+        <div className="section-head">
+          <h2>Deadline reminder tool</h2>
+          <p>A live countdown to the application deadline, plus a reminder scheduler to keep your application timeline on track.</p>
+        </div>
+        <div className="tool-panel">
+          <p style={{fontSize:"14px", color:"var(--slate)", marginBottom:"16px"}}>
+            Next application window closes <b style={{color:"var(--ink)"}}>{target.toLocaleDateString(undefined,{month:"long", day:"numeric", year:"numeric"})}</b>.
+          </p>
+          <div className="countdown-row">
+            {[["Days",days],["Hours",hours],["Minutes",mins],["Seconds",secs]].map(([label,val])=>(
+              <div className={"count-box" + (label==="Seconds" ? " pulse" : "")} key={label}>
+                <b key={label==="Seconds" ? pulseKey : label}>{fmt(val)}</b>
+                <span>{label}</span>
+              </div>
+            ))}
+          </div>
+
+          <form onSubmit={submit}>
+            <p style={{fontSize:"13.5px", fontWeight:600, marginBottom:"8px"}}>Remind me before the deadline:</p>
+            <div className="reminder-grid">
+              {[60,30,14,7,1].map(d=>(
+                <button type="button" key={d} className={"chip-toggle" + (picked.includes(d)?" on":"")}
+                  onClick={()=>togglePick(d)}>
+                  {d} day{d>1?"s":""} before
+                </button>
+              ))}
+            </div>
+            <div className="field-row">
+              <input type="email" required placeholder="you@university.edu" value={email}
+                onChange={e=>setEmail(e.target.value)} />
+              <button className="btn-solid" type="submit">Schedule reminders</button>
+            </div>
+          </form>
+
+          {scheduled && (
+            <div className="schedule-result">
+              <b>Scheduled reminder confirmation for {scheduled.email}:</b>
+              <ul>
+                {scheduled.dates.map(d=> <li key={d.d}>{d.d} day{d.d>1?"s":""} before → {d.date}</li>)}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EligibilityTool(){
+  const initial = {country:"", level:"", standing:"", language:"", logistics:""};
+  const [answers, setAnswers] = useState(initial);
+  const [step, setStep] = useState(0);
+  const totalSteps = 5;
+
+  const set = (key, val)=> setAnswers(a=>({...a,[key]:val}));
+  const canNext = ()=>{
+    if(step===0) return !!answers.country;
+    if(step===1) return !!answers.level;
+    if(step===2) return !!answers.standing;
+    if(step===3) return !!answers.language;
+    if(step===4) return !!answers.logistics;
+    return true;
+  };
+
+  const result = useMemo(()=>{
+    if(step < totalSteps) return null;
+    const reasons = [];
+    if(answers.country === "other"){
+      return {status:"ineligible", reasons:["Your country isn't currently on the IES partner list. The eligible list is updated between selection cycles."]};
+    }
+    if(answers.level === "none"){
+      return {status:"ineligible", reasons:["IES requires active enrollment in a bachelor's, master's or PhD programme during your stay in Berlin."]};
+    }
+    if(answers.logistics === "no"){
+      return {status:"ineligible", reasons:["The programme requires a set stay in Berlin (3–12 months) and an 8-week in-person internship."]};
+    }
+    let cautions = 0;
+    if(answers.standing === "average" || answers.standing === "unsure"){
+      cautions++; reasons.push("Academic standing is average or unranked — highlight motivation and leadership achievements in your statement.");
+    }
+    if(answers.language === "basic" || answers.language === "none"){
+      cautions++; reasons.push("Language skills in English or German need development to make the most of academic courses and internship placements.");
+    }
+    if(answers.logistics === "unsure"){
+      cautions++; reasons.push("Confirm availability with your home university before submitting your application.");
+    }
+    if(cautions===0){
+      reasons.push("Country, enrollment, academic standing, language skills and timeline align fully with IES requirements.");
+      return {status:"eligible", reasons};
+    }
+    return {status:"borderline", reasons};
+  },[step, answers]);
+
+  const restart = ()=>{ setAnswers(initial); setStep(0); };
+
+  const badgeLabel = {eligible:"Strong match", borderline:"Eligible — review guidance notes", ineligible:"Not eligible this cycle"};
+
+  return (
+    <section id="eligibility">
+      <div className="wrap">
+        <div className="section-head">
+          <h2>Eligibility self-check</h2>
+          <p>Evaluate your qualifications across academic, regional, and logistical requirements.</p>
+        </div>
+        <div className="tool-panel" style={{maxWidth:"640px"}}>
+          <div className="quiz-progress">
+            {Array.from({length:totalSteps}).map((_,i)=>(
+              <span key={i}><i style={{width: i < step ? "100%" : i===step ? "45%" : "0%"}}></i></span>
+            ))}
+          </div>
+
+          {step===0 && (
+            <div className="quiz-step">
+              <h3>Where do you hold citizenship or permanent residence?</h3>
+              <p className="hint">Select your country of origin or permanent residence.</p>
+              <select className="opt-select" value={answers.country} onChange={e=>set("country", e.target.value)}>
+                <option value="">Select a country…</option>
+                {COUNTRIES.map(c=> <option key={c} value={c}>{c}</option>)}
+                <option value="other">Not listed / other country</option>
+              </select>
+            </div>
+          )}
+
+          {step===1 && (
+            <div className="quiz-step">
+              <h3>What are you currently studying?</h3>
+              <p className="hint">Must be enrolled during your stay in Berlin.</p>
+              <div className="opt-grid">
+                {[["bachelor","Bachelor's student"],["master","Master's student"],["phd","PhD student"],["none","Not currently enrolled"]].map(([v,l])=>(
+                  <button key={v} className={"opt-btn"+(answers.level===v?" selected":"")} onClick={()=>set("level",v)}>{l}</button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {step===2 && (
+            <div className="quiz-step">
+              <h3>How would you describe your academic standing?</h3>
+              <p className="hint">Select your current performance tier.</p>
+              <div className="opt-grid">
+                {[["top","Near the top of my cohort"],["above","Solidly above average"],["average","Around average"],["unsure","Not sure / no ranking exists"]].map(([v,l])=>(
+                  <button key={v} className={"opt-btn"+(answers.standing===v?" selected":"")} onClick={()=>set("standing",v)}>{l}</button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {step===3 && (
+            <div className="quiz-step">
+              <h3>How comfortable are you in English or German?</h3>
+              <p className="hint">Coursework and internships are conducted in English or German.</p>
+              <div className="opt-grid">
+                {[["fluent","Fluent / near-native"],["comfortable","Comfortable, B2 or above"],["basic","Basic, still building up"],["none","Not confident yet"]].map(([v,l])=>(
+                  <button key={v} className={"opt-btn"+(answers.language===v?" selected":"")} onClick={()=>set("language",v)}>{l}</button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {step===4 && (
+            <div className="quiz-step">
+              <h3>Can you commit to 3–12 months in Berlin plus an 8-week internship?</h3>
+              <p className="hint">Both academic study and the internship are integral components.</p>
+              <div className="opt-grid">
+                {[["yes","Yes, I can commit fully"],["unsure","Probably, but need to confirm"],["no","No, that doesn't work for me"]].map(([v,l])=>(
+                  <button key={v} className={"opt-btn"+(answers.logistics===v?" selected":"")} onClick={()=>set("logistics",v)}>{l}</button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {step===totalSteps && result && (
+            <div className="result-card">
+              <span className={"result-badge "+result.status}>{badgeLabel[result.status]}</span>
+              <h3>{result.status === "eligible" ? "You meet the core candidate requirements." :
+                   result.status === "borderline" ? "You meet basic eligibility criteria with areas to highlight." :
+                   "IES is not a fit for your current timing or status."}</h3>
+              <ul>{result.reasons.map((r,i)=> <li key={i}>{r}</li>)}</ul>
+              <div className="quiz-nav">
+                <button className="btn-link" onClick={restart}>↺ Start over</button>
+                {result.status !== "ineligible" && <a className="cta-pill" href="#faq">Read the FAQ next</a>}
+              </div>
+            </div>
+          )}
+
+          {step < totalSteps && (
+            <div className="quiz-nav">
+              <button className="btn-link" onClick={()=> step>0 && setStep(s=>s-1)} style={{visibility: step>0?"visible":"hidden"}}>← Back</button>
+              <button className="cta-pill" style={{background: canNext() ? "var(--orange)" : "var(--paper-dim)", color: canNext() ? "#fff":"var(--slate)"}}
+                disabled={!canNext()} onClick={()=> canNext() && setStep(s=>s+1)}>
+                {step===totalSteps-1 ? "See my result" : "Next"} →
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQTool(){
+  const [query, setQuery] = useState("");
+  const [cat, setCat] = useState("All");
+  const [openIdx, setOpenIdx] = useState(null);
+
+  const filtered = FAQS.filter(f=>{
+    const matchesCat = cat==="All" || f.cat===cat;
+    const q = query.trim().toLowerCase();
+    const matchesQuery = !q || f.q.toLowerCase().includes(q) || f.a.toLowerCase().includes(q);
+    return matchesCat && matchesQuery;
+  });
+
+  return (
+    <section id="faq">
+      <div className="wrap">
+        <div className="section-head">
+          <h2>Frequently Asked Questions</h2>
+          <p>Find answers to common questions regarding eligibility, host universities, financial coverage, and application steps.</p>
+        </div>
+        <div className="faq-controls">
+          <input className="faq-search" placeholder="Search questions… e.g. “deadline” or “internship”"
+            value={query} onChange={e=>setQuery(e.target.value)} />
+          {FAQ_CATS.map(c=>(
+            <button key={c} className={"chip-toggle"+(cat===c?" on":"")} onClick={()=>setCat(c)}>{c}</button>
+          ))}
+        </div>
+        <div>
+          {filtered.length===0 && <div className="faq-empty">No questions match that search — try typing a different query or ask our Support Advisor below.</div>}
+          {filtered.map((f,i)=>{
+            const open = openIdx===i;
+            return (
+              <div className={"faq-item"+(open?" open":"")} key={f.q}>
+                <button className="faq-q" onClick={()=> setOpenIdx(open ? null : i)} aria-expanded={open}>
+                  <span>
+                    <span className="cat">{f.cat}</span>
+                    {f.q}
+                  </span>
+                  <span className="faq-toggle">+</span>
+                </button>
+                <div className="faq-a" style={{maxHeight: open ? "220px" : "0"}}>
+                  <p>{f.a}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Automation(){
+  const steps = [
+    {tag:"t = 0", t:"Application Submitted", d:"Confirmation email with a copy of answers and a document checklist."},
+    {tag:"t + 3d", t:"Document Verification", d:"Notification listing any missing or required files for evaluation."},
+    {tag:"t + 14d", t:"Schedule Reminders", d:"Updates sent ahead of upcoming intake evaluation rounds."},
+    {tag:"t + 21d", t:"Interview Invitation", d:"Shortlisted candidates receive direct links to select their interview slots."},
+    {tag:"t + 28d", t:"Decision Outcome", d:"Offer, waitlist, or decision notification issued with clear next steps."},
+    {tag:"t + 35d", t:"Pre-Departure", d:"Housing assignment, visa checklist, and orientation schedule sent out."}
+  ];
+
+  return (
+    <section id="automation" className="dark-section">
+      <div className="wrap">
+        <div className="section-head">
+          <h2>Applicant Communication &amp; Selection Timeline</h2>
+          <p>Our structured timeline keeps applicants informed at every stage of the process, with clear updates and personalized guidance when you need it.</p>
+        </div>
+        
+        <div className="timeline-grid">
+          {steps.map(s=>(
+            <div className="timeline-card" key={s.t}>
+              <span className="timeline-badge">{s.tag}</span>
+              <b>{s.t}</b>
+              <span>{s.d}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="stack-note">
+          Structured candidate workflows ensure every applicant receives timely updates regarding document verification, interview scheduling, and pre-departure preparation.
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ChatWidget(){
+  const [open, setOpen] = useState(false);
+  const [messages, setMessages] = useState([
+    {role:"advisor", text:"Hello! I'm your IES Support Advisor. Ask me about eligibility, host universities, housing, or application deadlines."}
+  ]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const bodyRef = useRef(null);
+
+  useEffect(()=>{
+    if(bodyRef.current) bodyRef.current.scrollTop = bodyRef.current.scrollHeight;
+  },[messages, loading, open]);
+
+  const send = (text)=>{
+    const clean = text.trim();
+    if(!clean || loading) return;
+    const next = [...messages, {role:"user", text:clean}];
+    setMessages(next);
+    setInput("");
+    setLoading(true);
+
+    setTimeout(()=>{
+      const reply = findProgramAnswer(clean);
+      setMessages(m=> [...m, {role:"advisor", text: reply}]);
+      setLoading(false);
+    }, 350);
+  };
+
+  const suggestions = ["Am I eligible from Georgia?","Is the internship required?","When is the deadline?"];
+
+  return (
+    <React.Fragment>
+      {!open && (
+        <button className="chat-fab" onClick={()=>setOpen(true)}>
+          <span className="chat-dot"></span> IES Support Advisor
+        </button>
+      )}
+      {open && (
+        <div className="chat-panel">
+          <div className="chat-head">
+            <div>
+              <b>IES Support Advisor</b>
+              <span>Quick Info &amp; Assistance</span>
+            </div>
+            <button onClick={()=>setOpen(false)} aria-label="Close chat">✕</button>
+          </div>
+          <div className="chat-body" ref={bodyRef}>
+            {messages.map((m,i)=>(
+              <div className={"msg "+m.role} key={i}>{m.text}</div>
+            ))}
+            {loading && <div className="msg advisor typing"><i></i><i></i><i></i></div>}
+          </div>
+          {messages.length < 3 && (
+            <div className="chat-suggest">
+              {suggestions.map(s=> <button key={s} onClick={()=>send(s)}>{s}</button>)}
+            </div>
+          )}
+          <form className="chat-input" onSubmit={e=>{e.preventDefault(); send(input);}}>
+            <input placeholder="Type a question…" value={input} onChange={e=>setInput(e.target.value)} />
+            <button type="submit" aria-label="Send">↑</button>
+          </form>
+        </div>
+      )}
+    </React.Fragment>
+  );
+}
+
+function Footer(){
+  return (
+    <footer>
+      <div className="wrap">
+        <div className="footer-top">
+          <div>
+            <div className="footer-brand">
+              <img src={LOGO_SRC} alt="Copernicus Berlin e.V. logo" />
+            </div>
+            <h3>Ready to see if this fits your timeline?</h3>
+          </div>
+          <div style={{display:"flex", gap:"12px", flexWrap:"wrap", alignSelf:"flex-start"}}>
+            <a className="cta-pill" href="#eligibility">Check eligibility</a>
+            <a className="btn-ghost" href="https://copernicusberlin.org/en/ies" target="_blank" rel="noreferrer">Application Portal ↗</a>
+          </div>
+        </div>
+        <p className="fine">
+          Copernicus Berlin e.V. is a non-profit association committed to empowering international students through scholarship programmes, academic exchange, and career development in Berlin. All application terms, country eligibilities, and deadlines are governed by official programme regulations.
+        </p>
+      </div>
+    </footer>
+  );
+}
+
+function App(){
+  return (
+    <React.Fragment>
+      <Header/>
+      <Hero/>
+      <Program/>
+      <Stay/>
+      <DeadlineTool/>
+      <EligibilityTool/>
+      <FAQTool/>
+      <Automation/>
+      <Footer/>
+      <ChatWidget/>
+    </React.Fragment>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
