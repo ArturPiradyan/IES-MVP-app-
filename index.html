@@ -35,10 +35,17 @@
   }
   body{
     margin:0;
-    background:var(--paper);
+    background:
+      radial-gradient(circle at 1px 1px, rgba(31,46,91,0.07) 1px, transparent 0) 0 0/26px 26px,
+      var(--paper);
     color:var(--ink);
     font-family:'IBM Plex Sans', sans-serif;
     -webkit-font-smoothing:antialiased;
+  }
+  .tint-section{
+    background:
+      radial-gradient(circle at 1px 1px, rgba(31,46,91,0.09) 1px, transparent 0) 0 0/26px 26px,
+      var(--paper-dim);
   }
   h1,h2,h3,h4{
     font-family:'Fraunces', serif;
@@ -65,9 +72,12 @@
     display:flex; align-items:center; text-decoration:none;
     background:transparent; border:none; padding:0; margin:0; outline:none; box-shadow:none;
   }
+  .brand-mark{
+    display:flex; align-items:center; background:#ffffff; border-radius:8px;
+    padding:6px 10px; box-shadow:0 4px 14px rgba(0,0,0,0.18);
+  }
   .brand img{
-    height:44px; width:auto; display:block; border:none; outline:none; box-shadow:none;
-    mix-blend-mode:screen; filter:brightness(1.08) contrast(1.05);
+    height:30px; width:auto; display:block; border:none; outline:none; box-shadow:none;
   }
   .navlinks{display:flex; align-items:center; gap:28px;}
   .navlinks a{color:#ffffff; text-decoration:none; font-size:14.5px; font-weight:500; transition:color .2s; opacity:0.92;}
@@ -91,7 +101,14 @@
   .mobilemenu a:last-child{border-bottom:none;}
 
   .hero{
-    background:radial-gradient(120% 140% at 78% -10%, var(--navy-soft) 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    background:
+      radial-gradient(1.5px 1.5px at 12% 22%, rgba(255,255,255,0.55) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 27% 68%, rgba(255,255,255,0.4) 50%, transparent 51%),
+      radial-gradient(2px 2px at 46% 15%, rgba(255,255,255,0.5) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 62% 40%, rgba(255,176,102,0.55) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 8% 82%, rgba(255,255,255,0.35) 50%, transparent 51%),
+      radial-gradient(2px 2px at 36% 88%, rgba(255,255,255,0.3) 50%, transparent 51%),
+      radial-gradient(120% 140% at 78% -10%, var(--navy-soft) 0%, var(--navy) 45%, var(--navy-deep) 100%);
     color:#ffffff; padding:64px 0 60px; overflow:hidden; position:relative;
   }
   .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:center;}
@@ -129,21 +146,20 @@
   .orbit-center b{font-family:'Fraunces',serif; font-size:15px; color:#ffffff;}
   .orbit-center span{font-size:10px; color:var(--orange-soft); margin-top:2px;}
   .orbit-legend{margin-top:14px; font-size:12px; color:rgba(255,255,255,0.7); text-align:right; max-width:300px; margin-left:auto;}
+  .orbit-point{position:absolute; z-index:3; display:flex; align-items:center; gap:7px;}
+  .orbit-point.reverse{flex-direction:row-reverse;}
+  .orbit-point .orbit-dot{position:static;}
   .orbit-city{
-    position:absolute; z-index:3; display:flex; align-items:center; gap:6px;
+    display:inline-flex; align-items:center; gap:6px;
     font-family:'IBM Plex Mono', monospace; font-size:11px; color:#ffffff; white-space:nowrap;
-    background:rgba(20,31,61,0.55); border:1px solid var(--line-on-navy); padding:3px 9px 3px 7px;
+    background:rgba(20,31,61,0.72); border:1px solid var(--line-on-navy); padding:3px 9px 3px 7px;
     border-radius:var(--radius-pill); backdrop-filter:blur(2px);
   }
   .orbit-city::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--orange-soft); flex-shrink:0;}
-  .orbit-city.c1{top:-6px; left:50%; transform:translateX(-50%);}
-  .orbit-city.c2{top:78px; right:-18px;}
-  .orbit-city.c3{bottom:34px; right:-6px;}
-  .orbit-city.c4{bottom:-6px; left:38%; transform:translateX(-50%);}
-  .orbit-city.c5{top:78px; left:-18px;}
+  .orbit-city.counter-fast{animation:spin 34s linear infinite reverse;}
+  .orbit-city.counter-slow{animation:spin 52s linear infinite;}
   @media (max-width:900px){
     .orbit-city{font-size:10px; padding:2px 7px 2px 6px;}
-    .orbit-city.c2, .orbit-city.c5{top:64px;}
   }
 
   section{padding:84px 0;}
@@ -154,7 +170,7 @@
   .dark-section{background:var(--navy); color:#ffffff;}
   .dark-section .section-head h2{color:#ffffff;}
   .dark-section .section-head p{color:rgba(255,255,255,0.85);}
-  .tint-section{background:var(--paper-dim);}
+
 
   .program-intro{font-size:16.5px; line-height:1.7; color:var(--ink); max-width:760px; margin-bottom:12px;}
   .program-accordion{border-top:1px solid var(--line-on-paper); margin-top:32px;}
@@ -281,73 +297,58 @@
   .faq-a p{padding:0 2px 20px; font-size:14.5px; color:var(--slate); line-height:1.65; max-width:660px;}
   .faq-empty{padding:30px 4px; color:var(--slate); font-size:14.5px;}
 
-  .timeline-grid{
-    display:grid;
-    grid-template-columns:repeat(6, 1fr);
-    gap:14px;
-    margin-top:36px;
-    width:100%;
+  .demo-shell{
+    background:rgba(255,255,255,0.04); border:1px solid var(--line-on-navy); border-radius:12px;
+    padding:30px 26px 26px; margin-top:36px;
   }
-  @media (max-width:992px){
-    .timeline-grid{
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-    }
+  @media (max-width:640px){.demo-shell{padding:22px 16px 18px;}}
+  .demo-topline{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:26px; flex-wrap:wrap;}
+  .demo-topline .stage-label{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--orange-soft); letter-spacing:0.02em;}
+  .demo-play{
+    display:inline-flex; align-items:center; gap:8px; background:var(--orange); color:#fff; border:none;
+    padding:9px 16px; border-radius:var(--radius-pill); font-size:13px; font-weight:700; transition:background .18s ease;
   }
-  @media (max-width:580px){
-    .timeline-grid{
-      grid-template-columns:repeat(1, 1fr);
-      gap:12px;
-    }
+  .demo-play:hover{background:var(--orange-deep);}
+  .demo-play .ico{font-size:11px;}
+
+  .demo-track{position:relative; display:flex; justify-content:space-between; margin-bottom:10px;}
+  .demo-track::before{
+    content:""; position:absolute; top:17px; left:17px; right:17px; height:2px; background:rgba(255,255,255,0.16); z-index:0;
   }
-  .timeline-card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid var(--line-on-navy);
-    border-radius:8px;
-    padding:20px 16px;
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    transition:transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+  .demo-track-fill{
+    position:absolute; top:17px; left:17px; height:2px; background:var(--orange); z-index:1; transition:width .5s ease;
   }
-  .timeline-card:hover{
-    transform:translateY(-3px);
-    border-color:var(--orange-soft);
-    background:rgba(255,255,255,0.09);
+  .demo-node-wrap{position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:10px; flex:1;}
+  .demo-node{
+    width:34px; height:34px; border-radius:50%; background:var(--navy-deep); border:2px solid rgba(255,255,255,0.25);
+    color:rgba(255,255,255,0.6); font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+    transition:all .25s ease; flex-shrink:0;
   }
-  .timeline-badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    font-weight:600;
-    color:var(--orange-soft);
-    background:rgba(255,124,7,0.16);
-    border:1px solid rgba(255,176,102,0.3);
-    padding:3px 9px;
-    border-radius:var(--radius-pill);
-    margin-bottom:12px;
-    width:fit-content;
+  .demo-node-wrap.done .demo-node{background:var(--orange); border-color:var(--orange); color:#fff;}
+  .demo-node-wrap.active .demo-node{background:var(--navy-deep); border-color:var(--orange); color:#fff; box-shadow:0 0 0 5px rgba(255,124,7,0.22); transform:scale(1.08);}
+  .demo-node-label{font-size:11px; text-align:center; color:rgba(255,255,255,0.62); max-width:96px; line-height:1.35; transition:color .2s ease;}
+  .demo-node-wrap.active .demo-node-label{color:#ffffff; font-weight:600;}
+  @media (max-width:760px){.demo-node-label{display:none;}}
+
+  .demo-preview{
+    margin-top:30px; background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:var(--shadow-float);
+    animation:fadeSlide .3s ease;
   }
-  .timeline-card b{
-    display:block;
-    font-size:14.5px;
-    line-height:1.35;
-    margin-bottom:8px;
-    color:#ffffff;
-    font-family:'IBM Plex Sans', sans-serif;
+  .demo-preview-head{
+    background:var(--paper-dim); padding:14px 20px; display:flex; justify-content:space-between; align-items:center;
+    border-bottom:1px solid var(--line-on-paper);
   }
-  .timeline-card span{
-    font-size:12.5px;
-    color:rgba(255,255,255,0.78);
-    line-height:1.45;
+  .demo-preview-head .sender{font-size:12.5px; color:var(--slate);}
+  .demo-preview-head .sender b{color:var(--ink);}
+  .demo-preview-body{padding:22px 24px;}
+  .demo-preview-body .subject{font-family:'Fraunces',serif; font-size:19px; color:var(--navy); margin-bottom:10px;}
+  .demo-preview-body p{font-size:14.5px; color:var(--slate); line-height:1.65;}
+  .demo-preview-cta{
+    display:inline-block; margin-top:16px; background:var(--navy); color:#fff; font-size:13px; font-weight:600;
+    padding:9px 18px; border-radius:var(--radius-pill);
   }
 
-  .stack-note{
-    margin-top:36px; border:1px solid var(--line-on-navy); border-radius:8px; padding:20px 22px; background:rgba(255,255,255,0.04);
-    font-size:14px; color:rgba(255,255,255,0.85); line-height:1.65;
-  }
+
 
   .chat-fab{
     position:fixed; bottom:24px; right:24px; z-index:50; background:var(--navy); color:#fff;
@@ -389,12 +390,11 @@
   .footer-top{display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; padding-bottom:36px; border-bottom:1px solid var(--line-on-navy);}
   .footer-top h3{color:#fff; font-size:22px; max-width:340px;}
   .footer-brand{
-    display:flex; align-items:center; gap:10px; margin-bottom:20px;
-    background:transparent; border:none; padding:0; outline:none; box-shadow:none;
+    display:inline-flex; align-items:center; gap:10px; margin-bottom:20px;
+    background:#ffffff; border-radius:8px; padding:8px 12px;
   }
   .footer-brand img{
-    height:38px; display:block; border:none; outline:none; box-shadow:none;
-    mix-blend-mode:screen; filter:brightness(1.08) contrast(1.05);
+    height:28px; display:block; border:none; outline:none; box-shadow:none;
   }
   footer .fine{margin-top:26px; font-size:12.5px; color:rgba(255,255,255,0.6); line-height:1.7; max-width:780px;}
 </style>
@@ -505,7 +505,9 @@ function Header(){
       <div className="wrap">
         <nav>
           <a className="brand" href="#top">
-            <img src={LOGO_SRC} alt="Copernicus Berlin e.V. logo" />
+            <span className="brand-mark">
+              <img src={LOGO_SRC} alt="Copernicus Berlin e.V. logo" />
+            </span>
           </a>
           <div className="navlinks">
             {links.map(([label,href])=> <a key={href} href={href}>{label}</a>)}
@@ -551,26 +553,36 @@ function Hero(){
           <div className="orbit-wrap">
             <div className="orbit-ring r1">
               <div className="orbit-spin">
-                <div className="orbit-dot" style={{top:"-5px", left:"155px"}}></div>
-                <div className="orbit-dot alt" style={{top:"155px", left:"-5px"}}></div>
-                <div className="orbit-dot" style={{bottom:"-5px", left:"90px"}}></div>
+                <div className="orbit-point" style={{top:"-5px", left:"155px"}}>
+                  <div className="orbit-dot"></div>
+                  <span className="orbit-city counter-fast">Kyiv</span>
+                </div>
+                <div className="orbit-point" style={{top:"155px", left:"-5px"}}>
+                  <div className="orbit-dot alt"></div>
+                  <span className="orbit-city counter-fast">Belgrade</span>
+                </div>
+                <div className="orbit-point" style={{bottom:"-5px", left:"90px"}}>
+                  <div className="orbit-dot"></div>
+                  <span className="orbit-city counter-fast">Tbilisi</span>
+                </div>
               </div>
             </div>
             <div className="orbit-ring r2">
               <div className="orbit-spin slow">
-                <div className="orbit-dot alt" style={{top:"-4px", left:"110px"}}></div>
-                <div className="orbit-dot" style={{bottom:"20px", right:"-4px"}}></div>
+                <div className="orbit-point" style={{top:"-4px", left:"110px"}}>
+                  <div className="orbit-dot alt"></div>
+                  <span className="orbit-city counter-slow">Yerevan</span>
+                </div>
+                <div className="orbit-point reverse" style={{bottom:"20px", right:"-4px"}}>
+                  <div className="orbit-dot"></div>
+                  <span className="orbit-city counter-slow">Tashkent</span>
+                </div>
               </div>
             </div>
             <div className="orbit-center">
               <b>Berlin</b>
               <span>host city</span>
             </div>
-            <span className="orbit-city c1">Kyiv</span>
-            <span className="orbit-city c2">Yerevan</span>
-            <span className="orbit-city c3">Tashkent</span>
-            <span className="orbit-city c4">Belgrade</span>
-            <span className="orbit-city c5">Tbilisi</span>
           </div>
           <p className="orbit-legend">
             Each orbiting point stands for a home region sending scholars to Berlin — from Kyiv,
@@ -936,36 +948,90 @@ function FAQTool(){
   );
 }
 
+const COMMS_STAGES = [
+  {label:"Applied", sender:"Copernicus Berlin · Applications",
+   subject:"We've received your IES application",
+   body:"Thanks for applying — here's a copy of your answers plus a checklist of what still needs to be uploaded before review can start.",
+   cta:"View checklist"},
+  {label:"Documents", sender:"Copernicus Berlin · Applications",
+   subject:"One document is still missing",
+   body:"Your transcript hasn't come through yet. Upload it here so your file stays in the current evaluation round instead of slipping to the next one.",
+   cta:"Upload document"},
+  {label:"Reminders", sender:"Copernicus Berlin · Applications",
+   subject:"7 days left in this intake",
+   body:"This cycle's window is closing soon. If anything in your application has changed, now's the time to update it.",
+   cta:"Review my application"},
+  {label:"Interview", sender:"Copernicus Berlin · Selection",
+   subject:"You're invited to interview",
+   body:"Congratulations on making the shortlist. Pick whichever slot works for you — no back-and-forth email needed.",
+   cta:"Choose a time"},
+  {label:"Decision", sender:"Copernicus Berlin · Selection",
+   subject:"Your IES decision is ready",
+   body:"An offer, a waitlist spot, or a decline — whichever it is, this email spells out exactly what happens next.",
+   cta:"See my decision"},
+  {label:"Pre-departure", sender:"Copernicus Berlin · Onboarding",
+   subject:"Getting ready for Berlin",
+   body:"Housing assignment, visa checklist and your orientation date — released on a short schedule so nothing lands on you all at once.",
+   cta:"Open onboarding guide"},
+];
+
 function Automation(){
-  const steps = [
-    {tag:"t = 0", t:"Application Submitted", d:"Confirmation email with a copy of answers and a document checklist."},
-    {tag:"t + 3d", t:"Document Verification", d:"Notification listing any missing or required files for evaluation."},
-    {tag:"t + 14d", t:"Schedule Reminders", d:"Updates sent ahead of upcoming intake evaluation rounds."},
-    {tag:"t + 21d", t:"Interview Invitation", d:"Shortlisted candidates receive direct links to select their interview slots."},
-    {tag:"t + 28d", t:"Decision Outcome", d:"Offer, waitlist, or decision notification issued with clear next steps."},
-    {tag:"t + 35d", t:"Pre-Departure", d:"Housing assignment, visa checklist, and orientation schedule sent out."}
-  ];
+  const [active, setActive] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const total = COMMS_STAGES.length;
+
+  useEffect(()=>{
+    if(!playing) return;
+    const id = setInterval(()=>{
+      setActive(a => (a + 1) % total);
+    }, 2400);
+    return ()=> clearInterval(id);
+  },[playing, total]);
+
+  const stage = COMMS_STAGES[active];
+  const fillPct = total > 1 ? (active/(total-1))*100 : 0;
 
   return (
     <section id="automation" className="dark-section">
       <div className="wrap">
         <div className="section-head">
-          <h2>Applicant Communication &amp; Selection Timeline</h2>
-          <p>Our structured timeline keeps applicants informed at every stage of the process, with clear updates and personalized guidance when you need it.</p>
-        </div>
-        
-        <div className="timeline-grid">
-          {steps.map(s=>(
-            <div className="timeline-card" key={s.t}>
-              <span className="timeline-badge">{s.tag}</span>
-              <b>{s.t}</b>
-              <span>{s.d}</span>
-            </div>
-          ))}
+          <h2>Applicant communication, demonstrated</h2>
+          <p>Six predictable moments in every application generate most of the email volume.
+          Play the sequence below to see what an applicant actually receives at each stage —
+          or click a stage directly.</p>
         </div>
 
-        <div className="stack-note">
-          Structured candidate workflows ensure every applicant receives timely updates regarding document verification, interview scheduling, and pre-departure preparation.
+        <div className="demo-shell">
+          <div className="demo-topline">
+            <span className="stage-label">Stage {active+1} of {total} · {stage.label}</span>
+            <button className="demo-play" onClick={()=>setPlaying(p=>!p)}>
+              <span className="ico">{playing ? "⏸" : "▶"}</span>
+              {playing ? "Pause demonstration" : "Play demonstration"}
+            </button>
+          </div>
+
+          <div className="demo-track">
+            <div className="demo-track-fill" style={{width: "calc((100% - 34px) * " + (fillPct/100) + ")"}}></div>
+            {COMMS_STAGES.map((s,i)=>(
+              <div className={"demo-node-wrap" + (i===active ? " active" : i<active ? " done" : "")} key={s.label}>
+                <button className="demo-node" onClick={()=>{setPlaying(false); setActive(i);}} aria-label={"Show stage: "+s.label}>
+                  {i<active ? "✓" : i+1}
+                </button>
+                <span className="demo-node-label">{s.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="demo-preview" key={active}>
+            <div className="demo-preview-head">
+              <span className="sender">From <b>{stage.sender}</b></span>
+            </div>
+            <div className="demo-preview-body">
+              <div className="subject">{stage.subject}</div>
+              <p>{stage.body}</p>
+              <span className="demo-preview-cta">{stage.cta}</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
